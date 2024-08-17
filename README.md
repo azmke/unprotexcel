@@ -29,21 +29,21 @@ You can download the latest release of Unprotexcel for your operating system fro
     </tr>
     <tr>
       <td align="center">
-        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/windows-installer.exe">
+        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/windows-installer.exe">
           <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"/>
           <br/>
           Download for Windows
         </a>
       </td>
       <td align="center">
-        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/mac-installer.dmg">
+        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/mac-installer.dmg">
           <img src="https://img.icons8.com/color/48/000000/mac-logo.png" alt="Mac"/>
           <br/>
           Download for Mac
         </a>
       </td>
       <td align="center">
-        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/linux-installer.sh">
+        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/linux-installer.sh">
           <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux"/>
           <br/>
           Download for Linux
@@ -73,7 +73,7 @@ Ensure you have the following installed:
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/azmke/unprotexcel.git
-    cd excel-sheet-unlocker
+    cd unprotexcel
     ```
 
 2. **Build the project with Maven:**
