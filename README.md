@@ -3,10 +3,65 @@
 **Unprotexcel** is a lightweight Java-based tool built with Maven designed to remove editing protection from Excel files, perfect for when you have forgotten the password. With a user-friendly interface and robust features, this tool ensures you can access and modify your Excel files with ease.
 
 <div align="center">
-    <img src="docs/assets/gui_screenshot.PNG" alt="Tool Interface" width="734">
+    <img src="docs/assets/gui_screenshot.PNG" alt="Tool Interface" width="787">
 </div>
 
-## Getting started
+## Features
+
+Unprotexcel offers a variety of features to quickly and easily unlock your Excel files:
+
+- **🔍 File Selection:** Choose an Excel file via button, drag-and-drop, or menu.
+- **🔓 Unlocking:** Easily unlock protected Excel files with a single click.
+- **💾 Save Option:** Save the unlocked file to your desired location.
+- **🌗 Themes:** Switch between light and dark themes for a comfortable user experience.
+- **🌍 Languages:** Toggle between English and German for a localized experience.
+
+## Download
+
+You can download the latest release of Unprotexcel for your operating system from the links below:
+
+<div align="left">
+  <table>
+    <tr>
+      <th>Windows</th>
+      <th>Mac</th>
+      <th>Linux</th>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/windows-installer.exe">
+          <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"/>
+          <br/>
+          Download for Windows
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/mac-installer.dmg">
+          <img src="https://img.icons8.com/color/48/000000/mac-logo.png" alt="Mac"/>
+          <br/>
+          Download for Mac
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/yourusername/excel-sheet-unlocker/releases/download/latest/linux-installer.sh">
+          <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux"/>
+          <br/>
+          Download for Linux
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## Usage
+
+Follow these simple steps to use Unprotexcel:
+
+1. **Select File:** Click the "Choose File" button, use drag-and-drop, or go to "File > Open file" to select an Excel file.
+2. **Unlock:** Click the "Unlock" button.
+3. **Save:** A dialog will prompt you to choose where to save the unlocked file. Select the destination and save.
+
+## Building
 
 ### Prerequisites
 Ensure you have the following installed:
