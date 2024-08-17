@@ -1,2 +1,3 @@
 # unprotexcel
-A lightweight tool to unlock Excel worksheets in case you forot the password
+
+A lightweight tool to unlock Excel worksheets in case you forgot the password
