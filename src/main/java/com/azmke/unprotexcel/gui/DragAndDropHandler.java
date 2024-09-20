@@ -1,6 +1,10 @@
-package com.azmke;
+package com.azmke.unprotexcel.gui;
 
 import javax.swing.*;
+
+import com.azmke.unprotexcel.App;
+import com.azmke.unprotexcel.utils.LanguageManager;
+
 import java.awt.datatransfer.DataFlavor;
 import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DropTargetAdapter;

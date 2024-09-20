@@ -1,16 +1,22 @@
-package com.azmke;
+package com.azmke.unprotexcel.workers;
 
 import javax.swing.*;
+
+import com.azmke.unprotexcel.App;
+import com.azmke.unprotexcel.utils.FileManager;
+import com.azmke.unprotexcel.utils.FileUtils;
+import com.azmke.unprotexcel.utils.LanguageManager;
+
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-public class UnlockWorker extends SwingWorker<Void, String> {
+public class UnlockWorkerOld extends SwingWorker<Void, String> {
     private final String filePath;
     private final LanguageManager languageManager;
     private final FileManager fileManager;
 
-    public UnlockWorker(String filePath, LanguageManager languageManager, FileManager fileManager) {
+    public UnlockWorkerOld(String filePath, LanguageManager languageManager, FileManager fileManager) {
         this.filePath = filePath;
         this.languageManager = languageManager;
         this.fileManager = fileManager;

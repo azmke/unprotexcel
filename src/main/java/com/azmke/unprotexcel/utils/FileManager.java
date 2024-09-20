@@ -1,10 +1,9 @@
-package com.azmke;
+package com.azmke.unprotexcel.utils;
 
 import java.io.File;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
 
 public class FileManager {
@@ -15,7 +14,7 @@ public class FileManager {
     }
 
     // Method to open the file dialog and update the text field
-    public File showOpenDialog(JTextField textField) {
+    public File showOpenDialog() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle(languageManager.getString("dialog.open.title"));
 
@@ -35,11 +34,6 @@ public class FileManager {
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-
-            // Update the text field with the selected file path
-            textField.setText(selectedFile.getAbsolutePath());
-            App.log(languageManager.getString("message.fileSelected", selectedFile.getAbsolutePath()));
-
             return selectedFile;
         }
 
@@ -110,7 +104,10 @@ public class FileManager {
         return new FileFilter() {
             @Override
             public boolean accept(File f) {
-                return f.isDirectory() || f.getName().toLowerCase().endsWith(".xls") || f.getName().toLowerCase().endsWith(".xlsx");
+                return f.isDirectory()
+                    || f.getName().toLowerCase().endsWith(".xls")
+                    || f.getName().toLowerCase().endsWith(".xlsx")
+                    || f.getName().toLowerCase().endsWith(".xlsm");
             }
 
             @Override

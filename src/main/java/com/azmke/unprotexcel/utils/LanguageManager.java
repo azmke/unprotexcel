@@ -1,4 +1,4 @@
-package com.azmke;
+package com.azmke.unprotexcel.utils;
 
 import java.text.MessageFormat;
 import java.util.Locale;

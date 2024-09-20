@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.azmke</groupId>
+  <groupId>com.azmke.unprotexcel</groupId>
   <artifactId>unprotexcel</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 
@@ -85,7 +85,7 @@
           <configuration>
               <archive>
                   <manifest>
-                      <mainClass>com.azmke.App</mainClass>
+                      <mainClass>com.azmke.unprotexcel.App</mainClass>
                   </manifest>
               </archive>
               <descriptorRefs>
@@ -110,7 +110,7 @@
               <jar>target/unprotexcel-0.1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
               <outfile>target/unprotexcel.exe</outfile>
               <minVersion>1.8.0</minVersion>
-              <mainClass>com.azmke.App</mainClass>
+              <mainClass>com.azmke.unprotexcel.App</mainClass>
               <!-- <icon>src/main/resources/icon.ico</icon> Optional: Icon für die EXE -->
           </configuration>
           <executions>
