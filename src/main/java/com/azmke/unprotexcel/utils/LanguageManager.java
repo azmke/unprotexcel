@@ -18,7 +18,7 @@ public class LanguageManager {
 
     public void setLanguage(String languageCode) {
         currentLanguage = languageCode;
-        Locale locale = new Locale(languageCode);
+        Locale locale = Locale.of(languageCode);
         resourceBundle = ResourceBundle.getBundle("messages", locale);
     }
 

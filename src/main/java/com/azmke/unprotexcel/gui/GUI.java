@@ -205,6 +205,18 @@ public class GUI {
                             : DetectionStatus.FALSE
                     );
 
+                    protections.setSheetProtectionDetected(
+                        excelHandler.hasSheetProtection()
+                            ? DetectionStatus.TRUE
+                            : DetectionStatus.FALSE
+                    );
+
+                    protections.setRangeProtectionDetected(
+                        excelHandler.hasRangeProtection()
+                            ? DetectionStatus.TRUE
+                            : DetectionStatus.FALSE
+                    );
+
                     protections.setVBAProtectionDetected(
                         excelHandler.hasVBAProtection()
                             ? DetectionStatus.TRUE
@@ -229,14 +241,20 @@ public class GUI {
         unlockButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                String filePath = textField.getText();
-                if (filePath.isEmpty()) {
-                    // Show error dialog if no file is selected
-                    JOptionPane.showMessageDialog(frame, languageManager.getString("dialog.noFile.text"), languageManager.getString("dialog.noFile.title"), JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                
                 try {
+                    // Show notice
+                    int response = JOptionPane.showConfirmDialog(
+                        frame,
+                        languageManager.getString("dialog.notice.text"),
+                        languageManager.getString("dialog.notice.title"),
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.WARNING_MESSAGE
+                    );
+    
+                    if (response != JOptionPane.YES_OPTION) {
+                        return;
+                    }
+
                     // Disable buttons temporarily
                     browseButton.setEnabled(false);
                     scanButton.setEnabled(false);
@@ -248,26 +266,54 @@ public class GUI {
                     if (excelHandler.hasModifyFilePassword()) {
                         excelHandler.removeModifyFilePassword();
                         protections.setModifyFilePasswordRemoved(RemovalStatus.TRUE);
+                    } else {
+                        protections.setModifyFilePasswordRemoved(RemovalStatus.FALSE);
                     }
 
                     if (excelHandler.hasWorkbookProtection()) {
                         excelHandler.removeWorkbookProtection();
                         protections.setWorkbookProtectionRemoved(RemovalStatus.TRUE);
+                    } else {
+                        protections.setWorkbookProtectionRemoved(RemovalStatus.FALSE);
+                    }
+
+                    if (excelHandler.hasSheetProtection()) {
+                        excelHandler.removeSheetProtection();
+                        protections.setSheetProtectionRemoved(RemovalStatus.TRUE);
+                    } else {
+                        protections.setSheetProtectionRemoved(RemovalStatus.FALSE);
+                    }
+
+                    if (excelHandler.hasRangeProtection()) {
+                        excelHandler.removeRangeProtection();
+                        protections.setRangeProtectionRemoved(RemovalStatus.TRUE);
+                    } else {
+                        protections.setRangeProtectionRemoved(RemovalStatus.FALSE);
                     }
 
                     if (excelHandler.hasVBAProtection()) {
-                        int response = JOptionPane.showConfirmDialog(frame,
+                        response = JOptionPane.showConfirmDialog(frame,
                             languageManager.getString("dialog.vbaProtection.text"),
                             languageManager.getString("dialog.vbaProtection.title"),
                             JOptionPane.YES_NO_OPTION,
                             JOptionPane.WARNING_MESSAGE);
                     
                         if (response == JOptionPane.YES_OPTION) {
-                            //protections.removeVBAProtection();
+                            excelHandler.removeVBAProtection();
                             protections.setVBAProtectionRemoved(RemovalStatus.TRUE);
                         } else {
                             protections.setVBAProtectionRemoved(RemovalStatus.FALSE);
                         }
+                    } else {
+                        protections.setVBAProtectionRemoved(RemovalStatus.FALSE);
+                    }
+
+                    File originalFile = new File(textField.getText());
+                    File destinationFile = fileManager.showSaveDialog(originalFile);
+                    if (destinationFile != null) {
+                        excelHandler.saveAs(destinationFile.getAbsolutePath());
+                        App.log(languageManager.getString("message.success", destinationFile.getAbsolutePath()));
+                        JOptionPane.showMessageDialog(null, languageManager.getString("dialog.success.text"), languageManager.getString("dialog.success.title"), JOptionPane.INFORMATION_MESSAGE);
                     }
                 
                 } catch (Exception e) {
@@ -306,7 +352,13 @@ public class GUI {
             public void actionPerformed(ActionEvent e) {
                 File selectedFile = fileManager.showOpenDialog();
                 if (selectedFile != null) {
+                    // Update path in text field
                     textField.setText(selectedFile.getAbsolutePath());
+
+                    // Reset detection and removal status
+                    protections.resetDetectionStatus();
+                    protections.resetRemovalStatus();
+
                     App.log(languageManager.getString("message.fileSelected", selectedFile.getAbsolutePath()));
                 }
             }
