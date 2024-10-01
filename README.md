@@ -29,21 +29,21 @@ You can download the latest release of Unprotexcel for your operating system fro
     </tr>
     <tr>
       <td align="center">
-        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/windows-installer.exe">
+        <a href="releases/latest/download/unprotexcel-0.1.0.exe">
           <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows"/>
           <br/>
           Download for Windows
         </a>
       </td>
       <td align="center">
-        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/mac-installer.dmg">
+        <a href="releases/latest/download/unprotexcel-0.1.0.jar">
           <img src="https://img.icons8.com/color/48/000000/mac-logo.png" alt="Mac"/>
           <br/>
           Download for Mac
         </a>
       </td>
       <td align="center">
-        <a href="https://github.com/azmke/unprotexcel/releases/download/latest/linux-installer.sh">
+        <a href="releases/latest/download/unprotexcel-0.1.0.jar">
           <img src="https://img.icons8.com/color/48/000000/linux.png" alt="Linux"/>
           <br/>
           Download for Linux
